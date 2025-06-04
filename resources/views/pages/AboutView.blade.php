@@ -6,7 +6,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <title>Tentang</title>
 </head>
-<body class="min-h-screen bg-[#AEC8A4]">
+<body class="min-h-screen bg-[#B6B09F]">
   <x-nav-bar />
 </body>
 </html>

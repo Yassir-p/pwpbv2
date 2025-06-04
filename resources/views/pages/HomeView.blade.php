@@ -8,7 +8,7 @@
   <title>Beranda</title>
 </head>
 
-<body class="min-h-screen bg-[#AEC8A4]">
+<body class="min-h-screen bg-[#B6B09F]">
   <x-nav-bar />
   <div class="flex justify-center items-center h-screen flex-col">
     <p class="text-3xl">SELAMAT DATANG DI</p>

@@ -7,7 +7,7 @@ Route::get('/', function () {
     return view('pages/HomeView');
 });
 
-Route::get('/produk', [ProductController::class, 'index']);
+Route::get('/produk', [ProductController::class, 'index'])->name('produk');
 
 Route::get('/hubungi', function () {
     return view('pages/ContactView');
