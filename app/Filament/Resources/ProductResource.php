@@ -12,6 +12,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
@@ -44,12 +45,16 @@ class ProductResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('nm_brg')->label('Nama Produk'),
+                TextColumn::make('hrg_brg')->label('Harga Produk'),
+                TextColumn::make('jenis')->label('Jenis'),
+                ImageColumn::make('gambar')->label('Gambar Produk'),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
