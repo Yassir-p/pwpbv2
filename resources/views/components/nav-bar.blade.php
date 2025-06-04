@@ -7,10 +7,10 @@
         </div>
         <div class="nav-links backdrop-blur-md md:static duration-300 absolute md:min-h-fit min-h-[60vh] left-0 top-[-300%] md:w-auto w-full flex md:justify-center md:items-center px-5">
             <ul id="nav-menu" class="w-full md:w-auto flex md:justify-center md:items-center md:flex-row flex-col md:gap-[4vw] gap-7 mx-auto">
-                <li><a href="/" class="hover:text-[#075B5E] duration-300">Beranda</a></li>
-                <li><a href="/tentang" class="hover:text-[#075B5E] duration-300">Layanan</a></li>
-                <li><a href="/hubungi" class="hover:text-[#075B5E] duration-300">Kontak</a></li>
-                <li><a href="/produk" class="hover:text-[#075B5E] duration-300">Produk</a></li>
+                <li><a href="/" class="hover:text-[#3a2a22] duration-300">Beranda</a></li>
+                <li><a href="/tentang" class="hover:text-[#3a2a22] duration-300">Layanan</a></li>
+                <li><a href="/hubungi" class="hover:text-[#3a2a22] duration-300">Kontak</a></li>
+                <li><a href="/produk" class="hover:text-[#3a2a22] duration-300">Produk</a></li>
             </ul>
         </div>
         <div class="flex items-center gap-6">
