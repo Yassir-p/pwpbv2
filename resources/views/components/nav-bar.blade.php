@@ -1,6 +1,6 @@
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-<nav class="px-6 py-4 backdrop-blur-md bg-white/10 fixed w-full">
+<nav class="px-6 py-4 backdrop-blur-md bg-white/10 fixed w-full z-50">
     <div class="flex items-center justify-between w-[92%] mx-auto">
         <div>
             <img src="/storage/assets/Wahyepp.png" alt="logo" class="w-32 h-32" />
