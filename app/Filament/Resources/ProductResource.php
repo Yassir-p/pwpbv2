@@ -30,7 +30,8 @@ class ProductResource extends Resource
             ->schema([
                 TextInput::make('nm_brg')->label('Nama Produk')->required(),
                 TextInput::make('hrg_brg')->label('Harga Produk')->required(),
-                Select::make('jenis')->label('Jenis Produk')->required()
+                TextInput::make('stok')->label('Stok Produk')->required(),
+                Select::make('kategori')->label('Kategori Produk')->required()
                     ->options([
                         'makanan' => 'Makanan',
                         'minuman' => 'Minuman',
