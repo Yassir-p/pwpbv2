@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string("nm_brg");
             $table->integer("hrg_brg");
-            $table->enum("jenis", ["Makanan","Minuman", "Perawatan"]);
+            $table->enum("kategori", ["Makanan","Minuman", "Perawatan"]);
+            $table->integer("stok");
             $table->string("gambar");
             $table->timestamps();
         });

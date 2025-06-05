@@ -17,7 +17,7 @@
     <!-- About Section -->
     <section class="py-16 px-4">
       <div class="max-w-5xl mx-auto text-center">
-        <h2 class="text-3xl sm:text-4xl font-semibold text-gray-900 mb-6">Tentang Kami</h2>
+        <h2 class="text-3xl sm:text-4xl font-semibold text-gray-900 mb-6">Tentang WahYep</h2>
         <p class="text-gray-700 text-base sm:text-lg mb-8 leading-relaxed">
           Warung Bah Iyep adalah warung kecil yang berdiri dengan cinta untuk menyediakan berbagai kebutuhan Anda.
           Kami menawarkan aneka makanan lezat, minuman segar, serta produk perawatan dan kebutuhan sehari-hari lainnya.
@@ -30,7 +30,7 @@
     <!-- Offerings Section -->
     <section class="py-16 px-4 bg-[#A9A490]">
       <div class="max-w-5xl mx-auto">
-        <h2 class="text-3xl sm:text-4xl font-semibold text-gray-900 text-center mb-12">Apa yang Kami Tawarkan</h2>
+        <h2 class="text-3xl sm:text-4xl font-semibold text-gray-900 text-center mb-12">Apa yang WahYep Tawarkan</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <!-- Makanan -->
           <div class="bg-[#EAE4D5] rounded-2xl shadow-lg p-6 text-center transform hover:scale-105 transition duration-300">
