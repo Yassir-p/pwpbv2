@@ -53,9 +53,9 @@
           </div>
           <div class="p-6">
             <h3 class="text-xl font-semibold text-gray-900 mb-2">{{ $row->nm_brg }}</h3>
-            <p class="text-gray-600 text-sm mb-1">Category: {{ $row->kategori }}</p>
+            <p class="text-gray-600 text-sm mb-1">Kategori: {{ $row->kategori }}</p>
             <p class="text-[#BF9264] font-bold text-lg mb-2">{{ $row->hrg_rupiah }}</p>
-            <p class="text-gray-500 text-sm mb-4">Stock: {{ $row->stok }}</p>
+            <p class="text-gray-500 text-sm mb-4">Stok: {{ $row->stok }}</p>
             <div class="flex items-center justify-between mb-4" x-data="{ qty: 0 }">
               <span class="text-gray-700 font-medium">Quantity:</span>
               <div class="flex items-center space-x-2">
@@ -64,7 +64,7 @@
                 <button type="button" @click="qty++" class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300 transition">+</button>
               </div>
             </div>
-            <button class="w-full bg-[#BF9264] text-white py-2 rounded-lg hover:bg-[#A76545] transition duration-300">Add to Cart</button>
+            <button class="w-full bg-[#BF9264] text-white py-2 rounded-lg hover:bg-[#A76545] transition duration-300">Tambah ke Keranjang</button>
           </div>
         </div>
         @endforeach
