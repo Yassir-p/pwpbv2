@@ -10,10 +10,10 @@
 
 <body class="min-h-screen bg-[#B6B09F]">
   <x-nav-bar />
-  <div class="flex justify-center items-center h-screen flex-col">
-    <p class="text-3xl font-Poppins font-bold">SELAMAT DATANG DI</p>
-    <p class="text-5xl font-Poppins font-bold">WARUNG BAH IYEP</p>
-    <p class="text-3xl font-Poppins font-bold">- MURAH, LENGKAP, NIKMAT! -</p>
+  <div class="flex flex-col justify-center items-center min-h-screen text-center px-4">
+    <p class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2">SELAMAT DATANG DI</p>
+    <p class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-2">WARUNG BAH IYEP</p>
+    <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold">- MURAH, LENGKAP, NIKMAT! -</p>
   </div>
 </body>
 

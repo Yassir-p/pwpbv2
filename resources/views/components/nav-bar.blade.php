@@ -5,7 +5,7 @@
         <div>
             <img src="/storage/assets/Wahyepp.png" alt="logo" class="w-32 h-32" />
         </div>
-        <div class="nav-links backdrop-blur-md md:static duration-300 absolute md:min-h-fit min-h-[60vh] left-0 top-[-300%] md:w-auto w-full flex md:justify-center md:items-center px-5">
+        <div class="nav-links backdrop-blur-md md:static duration-300 absolute md:min-h-fit min-h-[60vh] left-0 top-[-400%] md:w-auto w-full flex md:justify-center md:items-center px-5">
             <ul id="nav-menu" class="w-full md:w-auto flex md:justify-center md:items-center md:flex-row flex-col md:gap-[4vw] gap-7 mx-auto">
                 <li><a href="/" class="hover:text-[#3a2a22] duration-300">Beranda</a></li>
                 <li><a href="/tentang" class="hover:text-[#3a2a22] duration-300">Layanan</a></li>
@@ -14,6 +14,7 @@
             </ul>
         </div>
         <div class="flex items-center gap-6">
+            <a href="/login" class="bg-[#3a2a22] text-white px-4 py-2 rounded-full hover:bg-[#2a1c16] transition duration-300 text-sm font-medium md:text-base w-24 text-center">Login</a>
             <ion-icon onclick="onToogleMenu(this)" name="menu-outline" class="text-3xl cursor-pointer md:hidden"></ion-icon>
         </div>
     </div>

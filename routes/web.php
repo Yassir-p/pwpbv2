@@ -32,3 +32,7 @@ Route::get('/dashboardEdit', function () {
 Route::get('/dashboardData', function () {
     return view('pages/DashboardDataView');
 });
+
+Route::get('/login', function () {
+    return view('pages/LoginView');
+});
