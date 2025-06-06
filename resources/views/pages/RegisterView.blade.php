@@ -50,23 +50,17 @@
           </div>
         </div>
 
-        <div class="flex items-center justify-between">
-          <div class="text-sm">
-            <a href="#" class="font-medium text-[#4A4843] hover:text-[#2F2E2B] transition duration-300">Forgot password?</a>
-          </div>
-        </div>
-
         <div>
           <button type="submit"
-            class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-[#4A4843] hover:bg-[#2F2E2B] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#4A4843] transition duration-300">
-            Sign In
+            class="w-full flex justify-center mt-8 py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-[#4A4843] hover:bg-[#2F2E2B] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#4A4843] transition duration-300">
+            Daftar
           </button>
         </div>
       </form>
 
       <p class="mt-6 text-center text-sm text-gray-600">
         Sudah memiliki akun?
-        <a href="/login" class="font-medium text-[#4A4843] hover:text-[#2F2E2B] transition duration-300">Log In</a>
+        <a href="/login" class="font-medium text-[#4A4843] hover:text-[#2F2E2B] transition duration-300">Masuk</a>
       </p>
     </div>
   </div>
