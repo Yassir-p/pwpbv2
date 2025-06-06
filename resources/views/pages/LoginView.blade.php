@@ -9,4 +9,4 @@
 <body class="min-h-screen bg-[#B6B09F]">
   <x-nav-bar />
 </body>
-</html>
+</html> 
