@@ -9,14 +9,14 @@
 <body class="min-h-screen bg-[#B6B09F] flex flex-col">
   <x-nav-bar />
   <div class="flex-grow flex items-center justify-center px-4 sm:px-6 lg:px-8">
-    <div class="w-full max-w-md bg-white rounded-2xl shadow-xl p-8 sm:p-10 transform transition-all duration-500 hover:shadow-2xl">
+    <div class="w-full max-w-md bg-[#EFE4D2] rounded-2xl shadow-xl p-8 sm:p-10 transform transition-all duration-500 hover:shadow-2xl">
       <h2 class="text-3xl font-bold text-center text-[#2F2E2B] mb-8">Sign In</h2>
       <form class="space-y-6">
         <div>
-          <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+          <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
           <div class="mt-1">
-            <input id="email" name="email" type="email" autocomplete="email" required
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#4A4843] focus:border-transparent transition duration-200"
+            <input id="username" name="username" type="text" autocomplete="username" required
+              class="w-full px-4 py-3 border bg-[#f8eede] border-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#4A4843] focus:border-transparent transition duration-200"
               placeholder="Masukan email anda" />
           </div>
         </div>
@@ -24,17 +24,12 @@
           <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
           <div class="mt-1 relative">
             <input id="password" name="password" type="password" autocomplete="current-password" required
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#4A4843] focus:border-transparent transition duration-300"
+              class="w-full px-4 py-3 border bg-[#f8eede] border-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#4A4843] focus:border-transparent transition duration-300"
               placeholder="Enter your password" />
           </div>
         </div>
 
         <div class="flex items-center justify-between">
-          <div class="flex items-center">
-            <input id="remember-me" name="remember-me" type="checkbox"
-              class="h-4 w-4 text-[#4A4843] focus:ring-[#4A4843] border-gray-300 rounded" />
-            <label for="remember-me" class="ml-2 block text-sm text-gray-700">Remember me</label>
-          </div>
           <div class="text-sm">
             <a href="#" class="font-medium text-[#4A4843] hover:text-[#2F2E2B] transition duration-300">Forgot password?</a>
           </div>

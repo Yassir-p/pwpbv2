@@ -27,6 +27,7 @@ class PenggunaResource extends Resource
             ->schema([
                 TextInput::make('full_name')->label('Full Name')->required(),
                 TextInput::make('username')->label('Username')->required(),
+                TextInput::make('email')->label('Email')->email()->required(),
                 TextInput::make('password')->label('Password')->required(),
             ]);
     }
