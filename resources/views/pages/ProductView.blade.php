@@ -15,11 +15,10 @@
     <div class="w-full max-w-7xl px-4 py-10 mt-28">
       <form method="GET" action="{{ route('produk') }}" class="flex flex-col sm:flex-row gap-4 mb-8">
         <input type="text" name="search" placeholder="Cari produk..." value="{{ $request->search ?? '' }}"
-          class="flex-1 px-4 py-2 rounded-full bg-white text-gray-900 placeholder-gray-500
-                focus:outline-none focus:ring-4 focus:ring-[#BF9264] shadow-md" />
+          class="flex-1 px-4 py-2 rounded-full bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#BF9264] shadow-md" />
         <div x-data="{ open: false, selected: '{{ $request->kategori ?? 'Semua' }}' }" class="relative w-full sm:w-48">
           <button type="button" @click="open = !open"
-            class="w-full px-4 py-2 bg-white text-gray-900 rounded-full shadow-md flex justify-between items-center focus:outline-none focus:ring-4 focus:ring-[#BF9264]">
+            class="w-full px-4 py-2 bg-white text-gray-900 rounded-full shadow-md flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-[#BF9264]">
             <span x-text="selected"></span>
             <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
