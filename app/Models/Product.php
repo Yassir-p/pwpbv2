@@ -11,6 +11,7 @@ class Product extends Model
     protected $fillable = [
         "nm_brg",
         "hrg_brg",
+        "stok",
         "jenis",
         "gambar",
     ];

@@ -29,8 +29,8 @@ class ProductResource extends Resource
         return $form
             ->schema([
                 TextInput::make('nm_brg')->label('Nama Produk')->required(),
-                TextInput::make('hrg_brg')->label('Harga Produk')->required(),
-                TextInput::make('stok')->label('Stok Produk')->required(),
+                TextInput::make('hrg_brg')->label('Harga Produk')->numeric()->minValue(0)->type('number')->required(),
+                TextInput::make('stok')->label('Stok Produk')->numeric()->minValue(0)->type('number')->required(),
                 Select::make('kategori')->label('Kategori Produk')->required()
                     ->options([
                         'makanan' => 'Makanan',
@@ -47,7 +47,8 @@ class ProductResource extends Resource
             ->columns([
                 TextColumn::make('nm_brg')->label('Nama Produk'),
                 TextColumn::make('hrg_brg')->label('Harga Produk'),
-                TextColumn::make('jenis')->label('Jenis'),
+                TextColumn::make('stok')->label('Stok Produk'),
+                TextColumn::make('kategori')->label('Kategori'),
                 ImageColumn::make('gambar')->label('Gambar Produk'),
             ])
             ->filters([

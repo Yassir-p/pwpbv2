@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class UserModel extends Model
+class Pengguna extends Model
 {
-    protected $table = 'user';
-    protected $primaryKey = 'id';
+    use HasFactory;
+    protected $table = "pengguna";
     protected $fillable = [
         'full_name',
         'username',
