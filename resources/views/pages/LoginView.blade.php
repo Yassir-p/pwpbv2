@@ -20,12 +20,13 @@
               placeholder="Masukan email anda" />
           </div>
         </div>
+
         <div>
           <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
           <div class="mt-1 relative">
             <input id="password" name="password" type="password" autocomplete="current-password" required
               class="w-full px-4 py-3 border bg-[#f8eede] border-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#4A4843] focus:border-transparent transition duration-300"
-              placeholder="Enter your password" />
+              placeholder="Masukan password anda" />
           </div>
         </div>
 
