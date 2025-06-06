@@ -36,3 +36,7 @@ Route::get('/dashboardData', function () {
 Route::get('/login', function () {
     return view('pages/LoginView');
 });
+
+Route::get('/register', function () {
+    return view('pages/RegisterView');
+});

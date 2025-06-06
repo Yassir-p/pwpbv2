@@ -46,7 +46,7 @@
 
       <p class="mt-6 text-center text-sm text-gray-600">
         Don't have an account?
-        <a href="#" class="font-medium text-[#4A4843] hover:text-[#2F2E2B] transition duration-300">Sign up</a>
+        <a href="/register" class="font-medium text-[#4A4843] hover:text-[#2F2E2B] transition duration-300">Sign up</a>
       </p>
     </div>
   </div>
