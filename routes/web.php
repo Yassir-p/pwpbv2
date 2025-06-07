@@ -45,14 +45,17 @@ Route::get('/register', [AuthController::class, 'registerForm'])->name('register
 
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 
-Route::get('/cart', [CartController::class, 'showCart'])->name('cart.show');
-
-Route::post('/cart/add/{id}', [CartController::class, 'add'])->name('cart.add')->middleware('auth');
-
-Route::post('/cart/pesan', [CartController::class, 'pesan'])->name('cart.pesan');
-
-Route::post('/cart/clear', [CartController::class, 'clearCart'])->name('cart.clear');
-
-Route::get('/cart-count', [CartController::class, 'count']);
-
-Route::post('/cart/update/{id}', [CartController::class, 'update'])->name('cart.update');
+Route::middleware('auth:pengguna')->group(function () {
+    
+    Route::get('/cart', [CartController::class, 'showCart'])->name('cart.show');
+    
+    Route::post('/cart/add/{id}', [CartController::class, 'add'])->name('cart.add');
+    
+    Route::post('/cart/pesan', [CartController::class, 'pesan'])->name('cart.pesan');
+    
+    Route::post('/cart/clear', [CartController::class, 'clearCart'])->name('cart.clear');
+    
+    Route::get('/cart-count', [CartController::class, 'count']);
+    
+    Route::post('/cart/update/{id}', [CartController::class, 'update'])->name('cart.update');
+});

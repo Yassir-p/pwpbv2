@@ -8,31 +8,24 @@ use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
-    public function add(Request $request)
+    public function add(Request $request, $id)
     {
-        if (!Auth::check()) {
+        if (!Auth::guard('pengguna')->check()) {
             return response()->json([
-                
                 'success' => false,
                 'message' => 'Silakan login terlebih dahulu untuk menambahkan produk ke keranjang.'
             ], 401);
         }
 
-        $data = $request->json()->all();
-
-        if (!isset($data['id']) || !isset($data['qty'])) {
-            return response()->json(['success' => false, 'message' => 'Data kurang'], 400);
-        }
+        $qty = max(1, (int) $request->input('qty'));
 
         try {
-            $product = Product::findOrFail($data['id']);
+            $product = Product::findOrFail($id);
         } catch (\Exception $e) {
             return response()->json(['success' => false, 'message' => 'Produk tidak ditemukan'], 404);
         }
 
-        $qty = max(1, (int)$data['qty']);
         $cart = session('cart', []);
-
         if (isset($cart[$product->id])) {
             $cart[$product->id]['qty'] += $qty;
         } else {
@@ -41,13 +34,8 @@ class CartController extends Controller
                 'product' => $product
             ];
         }
-
         session(['cart' => $cart]);
-
-        return response()->json([
-            'success' => true,
-            'cartCount' => array_sum(array_column($cart, 'qty')),
-        ]);
+        return redirect()->route('produk')->with('success', 'Produk berhasil ditambahkan ke keranjang.');
     }
 
     public function count()
@@ -88,7 +76,7 @@ class CartController extends Controller
 
         $message .= "\nTotal: Rp " . number_format($total, 0, ',', '.');
 
-        $whatsappNumber = '6285213449736';
+        $whatsappNumber = '6289519633536';
         $url = 'https://wa.me/' . $whatsappNumber . '?text=' . urlencode($message);
 
         session()->forget('cart');

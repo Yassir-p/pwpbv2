@@ -32,7 +32,7 @@
                 Cart
                 <span id="cart-count" class="ml-2 bg-[#4A4843] text-white text-xs font-semibold px-2 py-1 rounded-full">{{ session('cart') ? array_sum(array_column(session('cart'), 'qty')) : 0 }}</span>
             </a>
-            @auth
+            @if (Auth::guard('pengguna')->check())  
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 <button type="submit" class="w-32 rounded-full bg-red-600 hover:bg-red-800 px-5 py-3 font-medium text-white transition-all duration-200 text-center">
@@ -43,7 +43,7 @@
             <a href="/login" class="w-32 rounded-full bg-[#4A4843] hover:bg-[#2F2E2B] px-5 py-3 font-medium text-white transition-all duration-200 text-center">
                 Login
             </a>
-            @endauth
+            @endif
 
         </div>
     </nav>

@@ -18,19 +18,19 @@ class AuthController extends Controller
     {
         $credentials = $request->only('username', 'password');
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::guard('pengguna')->attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/');
+            return redirect()->intended('/')->with('swal_success', 'Selamat datang, ' . Auth::guard('pengguna')->user()->full_name . '!');
         }
 
         return back()->withErrors([
             'username' => 'Username atau password salah.',
-        ])->withInput();
+        ])->withInput()->with('swal_error', 'Username atau password salah.');
     }
 
     public function logout(Request $request)
     {
-        Auth::logout();
+        Auth::guard('pengguna')->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect('/login');
@@ -57,8 +57,7 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        Auth::login($user);
-
+        Auth::guard('pengguna')->login($user);
         return redirect('/');
     }
 }

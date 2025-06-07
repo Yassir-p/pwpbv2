@@ -58,12 +58,12 @@
             <p class="text-gray-600 text-sm mb-1">Kategori: {{ $row->kategori }}</p>
             <p class="text-[#4A4843] font-bold text-lg mb-2">{{ $row->hrg_rupiah }}</p>
             <p class="text-gray-500 text-sm mb-4">Stok: {{ $row->stok }}</p>
-            @auth
+            @if (Auth::guard('pengguna')->check())
             <form method="POST" action="{{ route('cart.add', $row->id) }}" x-data="{ qty: 0 }">
               @csrf
               @else
               <form x-data="{ qty: 0 }" @submit.prevent="window.location.href='{{ route('login') }}'">
-                @endauth
+                @endif
                 <div class="flex items-center justify-between mb-4">
                   <span class="text-gray-700 font-medium">Quantity:</span>
                   <div class="flex items-center space-x-2">

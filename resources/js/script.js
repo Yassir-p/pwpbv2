@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 const response = await fetch('/cart/add', {
                     method: 'POST',
+                    credentials: 'include',
                     headers: {
                         'Content-Type': 'application/json',
                         'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
@@ -26,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 const result = await response.json();
-                console.log(result); // debug
+                console.log(result);
 
                 if (result.success) {
                     const badge = document.getElementById('cart-count');

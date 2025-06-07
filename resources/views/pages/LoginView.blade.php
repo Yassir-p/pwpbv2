@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
   <title>Login</title>
 </head>
+
 <body class="min-h-screen bg-[#B6B09F] flex flex-col">
   <x-nav-bar />
   <div class="flex-grow flex items-center justify-center px-4 sm:px-6 lg:px-8">
@@ -59,4 +61,22 @@
     </div>
   </div>
 </body>
+
 </html>
+@if(session('swal_error'))
+<script>
+  Swal.fire({
+    icon: 'error',
+    title: 'Oops...',
+    text: "{{ session('swal_error') }}",
+  });
+</script>
+@elseif(session('swal_success'))
+<script>
+  Swal.fire({
+    icon: 'success',
+    title: 'Login berhasil',
+    text: "{{ session('swal_success') }}",
+  });
+</script>
+@endif
