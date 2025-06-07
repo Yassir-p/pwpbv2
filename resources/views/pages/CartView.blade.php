@@ -62,7 +62,7 @@
             </table>
             <form action="{{ route('cart.pesan') }}" method="POST" target="_blank">
                 @csrf
-                <button type="submit" class="w-full bg-[#4A4843] hover:bg-[#2F2E2B] text-white py-2 rounded-lg transition duration-300 mt-3">
+                <button type="submit" class="w-full bg-[#B6B09F] hover:bg-[#a49c86] text-white py-2 rounded-lg transition duration-300 mt-3">
                     Pesan
                 </button>
             </form>

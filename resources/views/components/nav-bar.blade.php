@@ -1,5 +1,8 @@
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="https://unpkg.com/@heroicons/react@2.0.18/24/outline.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @vite('resources/js/app.js')
 <header class="fixed mx-auto w-full flex flex-col overflow-hidden px-8 py-4 lg:flex-row lg:items-center z-50 backdrop-blur-md">
     <a href="/" class="flex items-center whitespace-nowrap text-2xl font-black">
@@ -29,7 +32,19 @@
                 Cart
                 <span id="cart-count" class="ml-2 bg-[#4A4843] text-white text-xs font-semibold px-2 py-1 rounded-full">{{ session('cart') ? array_sum(array_column(session('cart'), 'qty')) : 0 }}</span>
             </a>
-            <a href="/login" class="w-32 rounded-full bg-[#4A4843] hover:bg-[#2F2E2B] px-5 py-3 font-medium text-white transition-all duration-200 text-center">Login</a>
+            @auth
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit" class="w-32 rounded-full bg-red-600 hover:bg-red-800 px-5 py-3 font-medium text-white transition-all duration-200 text-center">
+                    Logout
+                </button>
+            </form>
+            @else
+            <a href="/login" class="w-32 rounded-full bg-[#4A4843] hover:bg-[#2F2E2B] px-5 py-3 font-medium text-white transition-all duration-200 text-center">
+                Login
+            </a>
+            @endauth
+
         </div>
     </nav>
 </header>

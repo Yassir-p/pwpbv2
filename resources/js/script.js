@@ -1,4 +1,3 @@
-// Jalankan setelah DOM siap (misal simpan di resources/js/app.js jika pakai Vite)
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.addToCart').forEach((form) => {
         form.addEventListener('submit', async (e) => {

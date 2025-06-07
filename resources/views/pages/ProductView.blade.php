@@ -58,18 +58,23 @@
             <p class="text-gray-600 text-sm mb-1">Kategori: {{ $row->kategori }}</p>
             <p class="text-[#4A4843] font-bold text-lg mb-2">{{ $row->hrg_rupiah }}</p>
             <p class="text-gray-500 text-sm mb-4">Stok: {{ $row->stok }}</p>
-            <form class="addToCart" data-id="{{ $row->id }}" x-data="{ qty: 0 }">
-              <div class="flex items-center justify-between mb-4">
-                <span class="text-gray-700 font-medium">Quantity:</span>
-                <div class="flex items-center space-x-2">
-                  <button type="button" @click="if(qty >0) qty--" class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300 transition">-</button>
-                  <span class="text-gray-900 font-semibold" x-text="qty"></span>
-                  <button type="button" @click="qty++" class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300 transition">+</button>
+            @auth
+            <form method="POST" action="{{ route('cart.add', $row->id) }}" x-data="{ qty: 0 }">
+              @csrf
+              @else
+              <form x-data="{ qty: 0 }" @submit.prevent="window.location.href='{{ route('login') }}'">
+                @endauth
+                <div class="flex items-center justify-between mb-4">
+                  <span class="text-gray-700 font-medium">Quantity:</span>
+                  <div class="flex items-center space-x-2">
+                    <button type="button" @click="if(qty >1) qty--" class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300 transition">-</button>
+                    <span class="text-gray-900 font-semibold" x-text="qty"></span>
+                    <button type="button" @click="qty++" class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300 transition">+</button>
+                  </div>
                 </div>
-              </div>
-              <input type="hidden" name="qty" x-model="qty">
-              <button type="submit" class="w-full bg-[#4A4843] hover:bg-[#2F2E2B] text-white py-2 rounded-lg transition duration-300">Tambah ke Keranjang</button>
-            </form>
+                <input type="hidden" name="qty" x-model="qty">
+                <button type="submit" class="w-full bg-[#4A4843] hover:bg-[#2F2E2B] text-white py-2 rounded-lg transition duration-300">Tambah ke Keranjang</button>
+              </form>
           </div>
         </div>
         @endforeach

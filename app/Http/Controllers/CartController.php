@@ -4,11 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
     public function add(Request $request)
     {
+        if (!Auth::check()) {
+            return response()->json([
+                
+                'success' => false,
+                'message' => 'Silakan login terlebih dahulu untuk menambahkan produk ke keranjang.'
+            ], 401);
+        }
+
         $data = $request->json()->all();
 
         if (!isset($data['id']) || !isset($data['qty'])) {
@@ -23,6 +32,7 @@ class CartController extends Controller
 
         $qty = max(1, (int)$data['qty']);
         $cart = session('cart', []);
+
         if (isset($cart[$product->id])) {
             $cart[$product->id]['qty'] += $qty;
         } else {
@@ -36,7 +46,7 @@ class CartController extends Controller
 
         return response()->json([
             'success' => true,
-            'cartCount' => array_sum(array_column(session('cart'), 'qty')),
+            'cartCount' => array_sum(array_column($cart, 'qty')),
         ]);
     }
 
@@ -95,22 +105,22 @@ class CartController extends Controller
     public function update(Request $request, $id)
     {
         $action = $request->input('action');
-    $cart = session()->get('cart', []);
+        $cart = session()->get('cart', []);
 
-    if (isset($cart[$id])) {
-        if ($action === 'increase') {
-            $cart[$id]['qty'] += 1;
-        } elseif ($action === 'decrease') {
-            $cart[$id]['qty'] -= 1;
+        if (isset($cart[$id])) {
+            if ($action === 'increase') {
+                $cart[$id]['qty'] += 1;
+            } elseif ($action === 'decrease') {
+                $cart[$id]['qty'] -= 1;
 
-            if ($cart[$id]['qty'] <= 0) {
-                unset($cart[$id]);
+                if ($cart[$id]['qty'] <= 0) {
+                    unset($cart[$id]);
+                }
             }
+
+            session()->put('cart', $cart);
         }
 
-        session()->put('cart', $cart);
-    }
-
-    return redirect()->back();
+        return redirect()->back();
     }
 }
