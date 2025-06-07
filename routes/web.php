@@ -59,3 +59,7 @@ Route::middleware('auth:pengguna')->group(function () {
     
     Route::post('/cart/update/{id}', [CartController::class, 'update'])->name('cart.update');
 });
+
+Route::get('/profile', function () {
+    return view('pages/AccountView');
+});
