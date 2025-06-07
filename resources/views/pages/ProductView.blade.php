@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="//unpkg.com/alpinejs" defer></script>
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  @vite('resources/js/app.js')
   <title>Produk</title>
 </head>
 
@@ -37,34 +39,37 @@
           <input type="hidden" name="kategori" x-ref="kategori" :value="selected">
         </div>
         <button type="submit"
-          class="px-6 py-2 bg-[#BF9264] text-white rounded-full hover:bg-[#A76545] transition">
+          class="px-6 py-2 bg-[#4A4843] hover:bg-[#2F2E2B] text-white rounded-full transition">
           Cari
         </button>
       </form>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 place-items-center">
         @foreach ($products as $row)
-        <div class="w-full max-w-xs rounded-xl overflow-hidden shadow-lg bg-[#EFE4D2] backdrop-blur-sm border border-gray-100 hover:scale-105 transition duration-300">
+        <div class="w-full max-w-xs rounded-xl overflow-hidden shadow-lg bg-[#EFE4D2] backdrop-blur-sm border border-gray-100 transition duration-300">
           <div class="relative">
             <img class="w-full h-48 object-cover" src="{{ asset('storage/' . $row->gambar) }}" alt="{{ $row->nm_brg }}" />
             @if(in_array(strtolower($row->nm_brg), ['basreng', 'seblak']))
-            <div class="absolute top-2 left-2 bg-[#BF9264] text-white text-xs font-semibold px-2 py-1 rounded-full">Top Seller</div>
+            <div class="absolute top-2 left-2 bg-[#4A4843] text-white text-xs font-semibold px-2 py-1 rounded-full">Top Seller</div>
             @endif
           </div>
           <div class="p-6">
             <h3 class="text-xl font-semibold text-gray-900 mb-2">{{ $row->nm_brg }}</h3>
             <p class="text-gray-600 text-sm mb-1">Kategori: {{ $row->kategori }}</p>
-            <p class="text-[#BF9264] font-bold text-lg mb-2">{{ $row->hrg_rupiah }}</p>
+            <p class="text-[#4A4843] font-bold text-lg mb-2">{{ $row->hrg_rupiah }}</p>
             <p class="text-gray-500 text-sm mb-4">Stok: {{ $row->stok }}</p>
-            <div class="flex items-center justify-between mb-4" x-data="{ qty: 0 }">
-              <span class="text-gray-700 font-medium">Quantity:</span>
-              <div class="flex items-center space-x-2">
-                <button type="button" @click="if(qty >0) qty--" class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300 transition">-</button>
-                <span class="text-gray-900 font-semibold" x-text="qty"></span>
-                <button type="button" @click="qty++" class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300 transition">+</button>
+            <form class="addToCart" data-id="{{ $row->id }}" x-data="{ qty: 0 }">
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-gray-700 font-medium">Quantity:</span>
+                <div class="flex items-center space-x-2">
+                  <button type="button" @click="if(qty >0) qty--" class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300 transition">-</button>
+                  <span class="text-gray-900 font-semibold" x-text="qty"></span>
+                  <button type="button" @click="qty++" class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300 transition">+</button>
+                </div>
               </div>
-            </div>
-            <button class="w-full bg-[#BF9264] text-white py-2 rounded-lg hover:bg-[#A76545] transition duration-300">Tambah ke Keranjang</button>
+              <input type="hidden" name="qty" x-model="qty">
+              <button type="submit" class="w-full bg-[#4A4843] hover:bg-[#2F2E2B] text-white py-2 rounded-lg transition duration-300">Tambah ke Keranjang</button>
+            </form>
           </div>
         </div>
         @endforeach

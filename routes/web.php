@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -40,3 +41,16 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('pages/RegisterView');
 });
+
+Route::get('/cart', [CartController::class, 'showCart'])->name('cart.show');
+
+Route::post('/cart/add', [CartController::class, 'add']);
+
+Route::post('/cart/pesan', [CartController::class, 'pesan'])->name('cart.pesan');
+
+Route::post('/cart/clear', [CartController::class, 'clearCart'])->name('cart.clear');
+
+Route::get('/cart-count', [CartController::class, 'count']);
+
+
+Route::post('/cart/update/{id}', [CartController::class, 'update'])->name('cart.update');
