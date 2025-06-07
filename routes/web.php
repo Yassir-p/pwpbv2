@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -60,6 +61,4 @@ Route::middleware('auth:pengguna')->group(function () {
     Route::post('/cart/update/{id}', [CartController::class, 'update'])->name('cart.update');
 });
 
-Route::get('/profile', function () {
-    return view('pages/AccountView');
-});
+Route::get('/profile', [ProfileController::class, 'index']);

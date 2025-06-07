@@ -38,13 +38,6 @@
                     <ion-icon name="person-circle-outline" class="text-xl mr-2"></ion-icon>
                     Profile
                 </a>
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-                    <button type="submit" class="flex items-center rounded-full bg-red-600 hover:bg-red-800 px-5 py-3 font-medium text-white transition-all duration-200">
-                        <ion-icon name="log-out-outline" class="text-xl mr-2"></ion-icon>
-                        Logout
-                    </button>
-                </form>
             </div>
             @else
             <a href="/login" class="flex items-center rounded-full bg-[#4A4843] hover:bg-[#2F2E2B] px-5 py-3 font-medium text-white transition-all duration-200">
