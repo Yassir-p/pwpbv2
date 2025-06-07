@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
   <title>Login</title>
 </head>
-
 <body class="min-h-screen bg-[#B6B09F] flex flex-col">
   <x-nav-bar />
   <div class="flex-grow flex items-center justify-center px-4 sm:px-6 lg:px-8">
@@ -22,7 +20,6 @@
 
       <form method="POST" action="{{ route('login') }}" class="space-y-6">
         @csrf
-
         <div>
           <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
           <div class="mt-1">
