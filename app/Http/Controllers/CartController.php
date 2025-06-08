@@ -17,7 +17,7 @@ class CartController extends Controller
             ], 401);
         }
 
-        $qty = max(1, (int) $request->input('qty'));
+        $qty = max(0, (int) $request->input('qty'));
 
         try {
             $product = Product::findOrFail($id);
