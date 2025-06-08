@@ -20,7 +20,7 @@
         <ul class="flex w-full flex-col items-center space-y-2 lg:flex-row lg:justify-center lg:space-y-0">
             <li class="lg:mr-12"><a class="text-black transition hover:text-amber-950 duration-200" href="/">Beranda</a></li>
             <li class="lg:mr-12"><a class="text-black transition hover:text-amber-950 duration-200" href="/tentang">Layanan</a></li>
-            <li class="lg:mr-12"><a class="text-black transition hover:text-amber-950 duration-200" href="/hubungi">Kontak</a></li>
+            <li class="lg:mr-12"><a class="text-black transition hover:text-amber-950 duration-200" href="/hubungi">Hubungi</a></li>
             <li class="lg:mr-12"><a class="text-black transition hover:text-amber-950 duration-200" href="/produk">Produk</a></li>
         </ul>
         <hr class="mt-4 w-full lg:hidden" />
