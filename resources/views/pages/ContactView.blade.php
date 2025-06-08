@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
   <title>Hubungi</title>
 </head>
+
 <body class="min-h-screen bg-[#B6B09F] flex flex-col">
   <x-nav-bar />
   <section id="contact" class="py-24 px-4 bg-secondary/30 relative">
@@ -16,13 +18,10 @@
       <p class="text-center text-muted mb-12 max-w-2xl mx-auto">
         Punya sebuah pesan, saran atau pertanyaan? Jangan ragu untuk menghubungi kami! kami akan berusaha membalas pesan Anda secepat mungkin. Silakan isi formulir di bawah ini atau hubungi saya melalui email atau telepon.
       </p>
-
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-
         <div class="space-y-8">
           <h3 class="text-2xl font-semibold mb-6">Informasi Kontak</h3>
           <div class="space-y-6">
-
             <div class="flex items-start space-x-4">
               <div class="p-3 rounded-full bg-[#EFE4D2]">
                 <svg class="h-6 w-6 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -71,7 +70,7 @@
 
         <div class="p-8 rounded-2xl shadow-sm bg-[#EFE4D2]">
           <h3 class="text-2xl font-semibold mb-6">Kirim sebuah Pesan</h3>
-          <form id="contact-form" class="space-y-6">
+          <form id="contact-form" class="space-y-6" onsubmit="kirimWa(event)">
             <div>
               <label for="name" class="block text-sm font-medium mb-2">Namamu</label>
               <input type="text" id="name" name="name" required
@@ -80,14 +79,13 @@
             <div>
               <label for="email" class="block text-sm font-medium mb-2">Emailmu</label>
               <input type="email" id="email" name="email" required
-                class="w-full px-4 py-3 rounded-lg border border-input bg-[#f8eede] border-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#4A4843] focus:border-transparent transition duration-200" placeholder="contoh@gmail.com"/>
+                class="w-full px-4 py-3 rounded-lg border border-input bg-[#f8eede] border-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#4A4843] focus:border-transparent transition duration-200" placeholder="contoh@gmail.com" />
             </div>
             <div>
               <label for="message" class="block text-sm font-medium mb-2">Pesanmu</label>
               <textarea id="message" name="message" required class="w-full px-4 py-3 rounded-lg border border-input bg-[#f8eede] border-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#4A4843] focus:border-transparent transition duration-200"
                 placeholder="Hi, saya ingin bertanya tentang..."
-                rows="5"
-              ></textarea>
+                rows="5"></textarea>
             </div>
             <button type="submit" id="submit-button" class="w-full flex items-center justify-center gap-2 bg-[#4A4843] hover:bg-[#2F2E2B] text-white py-3 rounded-3xl transition-colors">
               <span id="button-text">Kirim Pesan</span>
@@ -99,4 +97,27 @@
     </div>
   </section>
 </body>
-</html> 
+
+</html>
+
+<script>
+  function kirimWa(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !email || !message) {
+      alert("Semua field wajib diisi.");
+      return;
+    }
+
+    const text = `Halo! Saya ${name} (${email}) ingin menyampaikan pesan:\n\n${message}`;
+    const encodedText = encodeURIComponent(text);
+
+    const phoneNumber = "6289519633536";
+
+    window.open(`https://wa.me/${phoneNumber}?text=${encodedText}`, "_blank");
+  }
+</script>

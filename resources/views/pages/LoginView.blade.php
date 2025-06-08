@@ -12,7 +12,7 @@
   <x-nav-bar />
   <div class="flex-grow flex items-center justify-center px-4 sm:px-6 lg:px-8">
     <div class="w-full max-w-md bg-[#EFE4D2] rounded-2xl shadow-xl p-8 sm:p-10 transform transition-all duration-500 hover:shadow-2xl">
-      <h2 class="text-3xl font-bold text-center text-[#2F2E2B] mb-8">Sign In</h2>
+      <h2 class="text-3xl font-bold text-center text-[#2F2E2B] mb-8">Masuk</h2>
 
       @if ($errors->any())
       <div class="mb-4 text-red-600 text-sm text-center">

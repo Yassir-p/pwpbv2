@@ -46,7 +46,7 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 place-items-center">
         @foreach ($products as $row)
-        <div class="w-full max-w-xs rounded-xl overflow-hidden shadow-lg bg-[#EFE4D2] backdrop-blur-sm border border-gray-100 transition duration-300">
+        <div class="w-full max-w-xs rounded-xl overflow-hidden shadow-md bg-[#EFE4D2] backdrop-blur-sm border border-gray-100 hover:shadow-xl transition duration-300">
           <div class="relative">
             <img class="w-full h-48 object-cover" src="{{ asset('storage/' . $row->gambar) }}" alt="{{ $row->nm_brg }}" />
             @if(in_array(strtolower($row->nm_brg), ['basreng', 'seblak']))
