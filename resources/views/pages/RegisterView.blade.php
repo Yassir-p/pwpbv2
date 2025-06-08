@@ -17,7 +17,7 @@
           <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
           <div class="mt-1">
             <input id="email" name="email" type="email" autocomplete="email" required
-              class="w-full px-4 py-3 border bg-[#f8eede] border-gray-400 rounded-lg shadow-sm"
+              class="w-full px-4 py-3 border bg-[#f8eede] border-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#4A4843] focus:border-transparent transition duration-200"
               placeholder="Masukkan email anda" />
           </div>
         </div>
@@ -26,7 +26,7 @@
           <label for="fullName" class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
           <div class="mt-1">
             <input id="fullName" name="full_name" type="text" required
-              class="w-full px-4 py-3 border bg-[#f8eede] border-gray-400 rounded-lg shadow-sm"
+              class="w-full px-4 py-3 border bg-[#f8eede] border-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#4A4843] focus:border-transparent transition duration-200"
               placeholder="Masukkan nama lengkap anda" />
           </div>
         </div>
@@ -35,7 +35,7 @@
           <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
           <div class="mt-1">
             <input id="username" name="username" type="text" autocomplete="username" required
-              class="w-full px-4 py-3 border bg-[#f8eede] border-gray-400 rounded-lg shadow-sm"
+              class="w-full px-4 py-3 border bg-[#f8eede] border-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#4A4843] focus:border-transparent transition duration-200"
               placeholder="Masukkan username anda" />
           </div>
         </div>
@@ -44,7 +44,7 @@
           <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
           <div class="mt-1">
             <input id="password" name="password" type="password" required
-              class="w-full px-4 py-3 border bg-[#f8eede] border-gray-400 rounded-lg shadow-sm"
+              class="w-full px-4 py-3 border bg-[#f8eede] border-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#4A4843] focus:border-transparent transition duration-200"
               placeholder="Masukkan password anda" />
           </div>
         </div>

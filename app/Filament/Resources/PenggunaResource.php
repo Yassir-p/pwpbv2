@@ -6,10 +6,12 @@ use App\Filament\Resources\PenggunaResource\Pages;
 use App\Filament\Resources\PenggunaResource\RelationManagers;
 use App\Models\Pengguna;
 use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
@@ -28,7 +30,8 @@ class PenggunaResource extends Resource
                 TextInput::make('full_name')->label('Full Name')->required(),
                 TextInput::make('username')->label('Username')->required(),
                 TextInput::make('email')->label('Email')->email()->required(),
-                TextInput::make('password')->label('Password')->required(),
+                TextInput::make('password')->label('Password')->required()->password(),
+                FileUpload::make('profile')->label('Profile Picture')->required(),
             ]);
     }
 
@@ -38,7 +41,9 @@ class PenggunaResource extends Resource
             ->columns([
                 TextColumn::make('full_name')->label('Full Name'),
                 TextColumn::make('username')->label('Username'),
+                TextColumn::make('email')->label('Email'),
                 TextColumn::make('password')->label('Password'),
+                ImageColumn::make('profile')->label('Profile Picture'),
             ])
             ->filters([
                 //

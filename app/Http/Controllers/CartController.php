@@ -70,6 +70,13 @@ class CartController extends Controller
             $subtotal = $qty * $harga;
             $total += $subtotal;
 
+            $dbProduct = Product::find($product->id);
+            if ($dbProduct->stok < $qty) {
+                return redirect()->back()->with('error', "Stok untuk {$dbProduct->nm_brg} tidak mencukupi.");
+            }
+            $dbProduct->stok -= $qty;
+            $dbProduct->save();
+
             $message .= "{$product->nm_brg} \t {$qty} \t Rp " . number_format($harga, 0, ',', '.') .
                 " \t Rp " . number_format($subtotal, 0, ',', '.') . "\n";
         }
