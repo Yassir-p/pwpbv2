@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Pengguna extends Authenticatable
 {
-    use Notifiable;
+    use HasFactory, Notifiable;
     protected $table = "pengguna";
     protected $fillable = [
         'full_name',
