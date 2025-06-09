@@ -15,9 +15,4 @@ class ProfileController extends Controller
         return view('pages/AccountView', compact('user'));
     }
 
-    public function update()
-    {
-        $user = auth()->guard('pengguna')->user();
-        
-    }
 }
