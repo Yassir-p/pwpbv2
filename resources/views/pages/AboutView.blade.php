@@ -25,7 +25,7 @@
 
     <section class="py-16 px-4 bg-[#A9A490]">
       <div class="max-w-5xl mx-auto">
-        <h2 class="text-3xl sm:text-4xl font-semibold text-gray-900 text-center mb-12">Apa yang WahYep Tawarkan</h2>
+        <h2 class="text-3xl sm:text-4xl font-semibold text-gray-900 text-center mb-12">Apa yang WahYep tawarkan</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <div class="bg-[#EAE4D5] rounded-2xl shadow-lg p-6 text-center transform hover:scale-105 transition duration-300">
             <div class="w-16 h-16 bg-indigo-100 rounded-full mx-auto mb-4 flex items-center justify-center">
