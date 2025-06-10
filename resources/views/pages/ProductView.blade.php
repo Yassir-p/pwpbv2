@@ -59,7 +59,20 @@
             <p class="text-[#4A4843] font-bold text-lg mb-2">{{ $row->hrg_rupiah }}</p>
             <p class="text-gray-500 text-sm mb-4">Stok: {{ $row->stok }}</p>
             @if (Auth::guard('pengguna')->check())
-            <form method="POST" action="{{ route('cart.add', $row->id) }}" x-data="{ qty: 0 }">
+            <form method="POST" action="{{ route('cart.add', $row->id) }}" x-data="{ qty: 0 }" @submit.prevent="if (qty <= 0) {
+              Swal.fire({
+              icon: 'error',
+              title: 'Jumlah tidak valid',
+              text: 'Silakan pilih jumlah produk terlebih dahulu!'
+              });
+              } else {
+               Swal.fire({
+               icon: 'success',
+               title: 'Sukses',
+               text: 'Berhasil ditambah ke keranjang'
+               });
+                $el.submit();
+              }">
               @csrf
               @else
               <form x-data="{ qty: 0 }" @submit.prevent="Swal.fire({
