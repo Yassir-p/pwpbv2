@@ -87,7 +87,7 @@
                 })">
                 @endif
                 <div class="flex items-center justify-between mb-4">
-                  <span class="text-gray-700 font-medium">Quantity:</span>
+                  <span class="text-gray-700 font-medium">Kuantitas:</span>
                   <div class="flex items-center space-x-2">
                     <button type="button" @click="if(qty >1) qty--" class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300 transition">-</button>
                     <span class="text-gray-900 font-semibold" x-text="qty"></span>
