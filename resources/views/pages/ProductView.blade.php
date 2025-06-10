@@ -62,7 +62,16 @@
             <form method="POST" action="{{ route('cart.add', $row->id) }}" x-data="{ qty: 0 }">
               @csrf
               @else
-              <form x-data="{ qty: 0 }" @submit.prevent="window.location.href='{{ route('login') }}'">
+              <form x-data="{ qty: 0 }" @submit.prevent="Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Anda harus login terlebih dahulu untuk menambahkan produk ke keranjang!',
+                confirmButtonText: 'Login sekarang',
+                }).then((result) => {
+                  if (result.isConfirmed) {
+                    window.location.href = 'login';
+                  }
+                })">
                 @endif
                 <div class="flex items-center justify-between mb-4">
                   <span class="text-gray-700 font-medium">Quantity:</span>
