@@ -15,5 +15,4 @@ class ProfileController extends Controller
         return view('pages/AccountView', compact('user'));
     }
 
-    
 }

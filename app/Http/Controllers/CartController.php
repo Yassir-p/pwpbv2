@@ -24,6 +24,13 @@ class CartController extends Controller
         } catch (\Exception $e) {
             return response()->json(['success' => false, 'message' => 'Produk tidak ditemukan'], 404);
         }
+        
+        if ($product->stok < $qty) {
+            return response()->json([
+                'success' => false,
+                'message' => "Stok untuk {$product->nm_brg} tidak mencukupi."
+            ], 400);
+        }
 
         $cart = session('cart', []);
         if (isset($cart[$product->id])) {

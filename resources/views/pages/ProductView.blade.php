@@ -46,7 +46,7 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 place-items-center">
         @foreach ($products as $row)
-        <div class="w-full max-w-xs rounded-xl overflow-hidden shadow-md bg-[#EFE4D2] backdrop-blur-sm border border-gray-100 hover:shadow-xl transition duration-300">
+        <div class="w-full max-w-xs rounded-xl overflow-hidden shadow-md bg-[#EFE4D2] backdrop-blur-sm border border-gray-100 hover:shadow-2xl transition duration-300">
           <div class="relative">
             <img class="w-full h-48 object-cover" src="{{ asset('storage/' . $row->gambar) }}" alt="{{ $row->nm_brg }}" />
             @if(in_array(strtolower($row->nm_brg), ['basreng', 'seblak']))
@@ -62,7 +62,16 @@
             <form method="POST" action="{{ route('cart.add', $row->id) }}" x-data="{ qty: 0 }">
               @csrf
               @else
-              <form x-data="{ qty: 0 }" @submit.prevent="window.location.href='{{ route('login') }}'">
+              <form x-data="{ qty: 0 }" @submit.prevent="Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Anda harus login terlebih dahulu untuk menambahkan produk ke keranjang!',
+                confirmButtonText: 'Login sekarang',
+                }).then((result) => {
+                  if (result.isConfirmed) {
+                    window.location.href = 'login';
+                  }
+                })">
                 @endif
                 <div class="flex items-center justify-between mb-4">
                   <span class="text-gray-700 font-medium">Quantity:</span>

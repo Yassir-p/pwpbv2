@@ -16,7 +16,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
     </label>
-    <nav aria-label="Header Navigation" class="peer-checked:pt-8 peer-checked:max-h-60 flex max-h-0 w-full flex-col items-center overflow-hidden transition-all lg:ml-24 lg:max-h-full lg:flex-row">
+    <nav aria-label="Header Navigation" class="peer-checked:pt-8 peer-checked:max-h-60 flex max-h-0 w-full flex-col items-center overflow-hidden transition-all lg:ml-40 lg:max-h-full lg:flex-row">
         <ul class="flex w-full flex-col items-center space-y-2 lg:flex-row lg:justify-center lg:space-y-0">
             <li class="lg:mr-12"><a class="text-black transition hover:text-amber-950 duration-200" href="/">Beranda</a></li>
             <li class="lg:mr-12"><a class="text-black transition hover:text-amber-950 duration-200" href="/tentang">Layanan</a></li>
@@ -29,7 +29,6 @@
                 <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
                 </svg>
-                Cart
                 <span id="cart-count" class="ml-2 bg-[#4A4843] text-white text-xs font-semibold px-2 py-1 rounded-full">{{ session('cart') ? array_sum(array_column(session('cart'), 'qty')) : 0 }}</span>
             </a>
             @if (Auth::guard('pengguna')->check())
