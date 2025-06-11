@@ -47,7 +47,7 @@ class AuthController extends Controller
             'full_name' => 'required|string|max:255',
             'email' => 'required|email|unique:pengguna,email',
             'username' => 'required|string|unique:pengguna,username|max:255',
-            'password' => 'required|string|min:6',
+            'password' => 'required|string|max:40',
         ]);
 
         $user = Pengguna::create([
