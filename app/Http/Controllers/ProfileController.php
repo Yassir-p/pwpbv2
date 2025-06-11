@@ -14,5 +14,4 @@ class ProfileController extends Controller
         $user = auth()->guard('pengguna')->user();
         return view('pages/AccountView', compact('user'));
     }
-
 }
