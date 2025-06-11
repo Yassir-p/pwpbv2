@@ -12,12 +12,6 @@
     <div class="min-h-screen flex items-center justify-center p-4">
 
         <div class="w-full max-w-md bg-[#EFE4D2] rounded-2xl shadow-xl p-8 mt-8">
-            <div class="text-center mb-8">
-                <div class="relative inline-block">
-                    <img id="profilePhoto" src="{{ $user->profile ? asset('storage/' . $user->profile) : 'https://via.placeholder.com/150' }}" class="w-32 h-32 rounded-full object-cover border-4 border-white shadow-md">
-                </div>
-                <h4 id="fullName" class="text-gray-800"><a href="#">Edit Foto Profile</a></h4>
-            </div>
 
             <form id="profileForm" class="space-y-4 mt-4">
                 @csrf
@@ -51,10 +45,6 @@
                         <input id="password" type="password" value="********" class="w-full px-4 py-2 border bg-[#f8eede] border-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#4A4843] focus:border-transparent transition duration-300" disabled>
 
                     </div>
-                </div>
-
-                <div class="flex justify-end mt-8">
-                    <button type="submit" id="editBtn" class="bg-[#4A4843] hover:bg-[#2F2E2B] w-full text-white px-6 py-2 rounded-lg transition">Edit Profile</button>
                 </div>
             </form>
             <form method="POST" action="{{ route('logout') }}" class="mt-4">
