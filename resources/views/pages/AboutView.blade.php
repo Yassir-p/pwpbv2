@@ -34,7 +34,7 @@
               </svg>
             </div>
             <h3 class="text-xl font-semibold text-gray-900 mb-2">Makanan</h3>
-            <p class="text-gray-700">Nikmati berbagai makanan lezat seperti seblak, basreng, dan camilan lainnya yang menggugah selera</p>
+            <p class="text-gray-700">Nikmati berbagai makanan lezat seperti seblak, basreng, dan camilan lainnya yang menggugah selera.</p>
           </div>
 
           <div class="bg-[#EAE4D5] rounded-2xl shadow-lg p-6 text-center transform hover:scale-105 transition duration-300">
