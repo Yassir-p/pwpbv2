@@ -50,7 +50,7 @@
           <div class="relative">
             <img class="w-full h-48 object-cover" src="{{ asset('storage/' . $row->gambar) }}" alt="{{ $row->nm_brg }}" />
             @if(in_array(strtolower($row->nm_brg), ['basreng', 'seblak']))
-            <div class="absolute top-2 left-2 bg-[#4A4843] text-white text-xs font-semibold px-2 py-1 rounded-full">Top Seller</div>
+            <div class="absolute top-2 left-2 bg-[#4A4843] text-white text-xs font-semibold px-2 py-1 rounded-full">Terlaris</div>
             @endif
           </div>
           <div class="p-6">
