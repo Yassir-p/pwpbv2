@@ -18,23 +18,38 @@ class AuthController extends Controller
     {
         $credentials = $request->only('username', 'password');
 
-        if (Auth::guard('pengguna')->attempt($credentials)) {
+        if (Auth::guard('admin')->attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/')->with('swal_success', 'Selamat datang, ' . Auth::guard('pengguna')->user()->full_name . '!');
+            return redirect()->intended('admin')
+                ->with('swal_success', 'Selamat datang, Admin!');
         }
 
+        if (Auth::guard('pengguna')->attempt($credentials)) {
+            $request->session()->regenerate();
+            return redirect()->intended('/')
+                ->with('swal_success', 'Selamat datang, ' . Auth::guard('pengguna')->user()->full_name . '!');
+        }
+
+        // Jika keduanya gagal
         return back()->withErrors([
             'username' => 'Username atau password salah.',
         ])->withInput()->with('swal_error', 'Username atau password salah.');
     }
 
+
     public function logout(Request $request)
-    {
+{
+    if (Auth::guard('admin')->check()) {
+        Auth::guard('admin')->logout();
+    } elseif (Auth::guard('pengguna')->check()) {
         Auth::guard('pengguna')->logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-        return redirect('/login');
     }
+
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
+
+    return redirect('/login');
+}
 
     public function registerForm()
     {
