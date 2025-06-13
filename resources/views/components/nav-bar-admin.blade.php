@@ -20,6 +20,10 @@
     @endphp
 
     @if (!$admin || $admin->role !== 'admin')
+    $user = Auth::guard('pengguna')->user();
+    @endphp
+
+    @if (!$user || $user->role !== 'admin')
     <script>
         Swal.fire({
             icon: 'error',
@@ -31,8 +35,7 @@
         });
     </script>
     @endif
-
-
+    
     <header class="fixed mx-auto w-full flex flex-col overflow-hidden px-8 py-4 lg:flex-row lg:items-center z-50 backdrop-blur-md">
         <a href="/" class="flex items-center whitespace-nowrap text-2xl font-black">
             <span class="mr-2 w-28">
