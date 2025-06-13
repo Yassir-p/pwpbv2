@@ -35,7 +35,7 @@
             </ul>
             <hr class="mt-4 w-full lg:hidden" />
             <div class="my-0 flex items-center space-x-6 space-y-2 lg:my-0 lg:ml-auto lg:space-x-3 lg:space-y-0">
-                <a href="/cart" class="hover:bg-[#9b9688] lg:mt-0 md:mt-4 mt-4 px-3 py-2 rounded-md text-sm font-medium flex items-center transition duration-300">
+                <a href="{{ url('cart') }}" class="hover:bg-[#9b9688] lg:mt-0 md:mt-4 mt-4 px-3 py-2 rounded-md text-sm font-medium flex items-center transition duration-300">
                     <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
                     </svg>
@@ -43,13 +43,13 @@
                 </a>
                 @if (Auth::guard('pengguna')->check())
                 <div class="flex flex-row items-center space-x-3">
-                    <a href="/profile" class="flex items-center rounded-full bg-[#4A4843] hover:bg-[#2F2E2B] px-5 py-3 font-medium text-white transition-all duration-200">
+                    <a href="{{ url('profile') }}" class="flex items-center rounded-full bg-[#4A4843] hover:bg-[#2F2E2B] px-5 py-3 font-medium text-white transition-all duration-200">
                         <ion-icon name="person-circle-outline" class="text-xl mr-2"></ion-icon>
                         Profile
                     </a>
                 </div>
                 @else
-                <a href="/login" class="w-32 rounded-full bg-[#4A4843] hover:bg-[#2F2E2B] px-5 py-3 font-medium text-white transition-all duration-200 text-center">
+                <a href="{{ url('login') }}" class="w-32 rounded-full bg-[#4A4843] hover:bg-[#2F2E2B] px-5 py-3 font-medium text-white transition-all duration-200 text-center">
                     Login
                 </a>
                 @endif

@@ -15,7 +15,7 @@
     <p class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-2">WARUNG BAH IYEP</p>
     <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold">- MURAH, LENGKAP, NIKMAT! -</p>
     <div class="mt-8">
-      <a href="/produk">
+      <a href="{{ url('produk') }}">
         <div class="group flex w-full cursor-pointer items-center justify-center rounded-md bg-[#4A4843] hover:bg-[#2F2E2B] px-6 py-2 text-white transition">
           <span class="group flex w-full items-center justify-center rounded py-1 text-center font-bold">Lihat Produk</span>
         </div>

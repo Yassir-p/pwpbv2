@@ -17,7 +17,7 @@
     <x-nav-bar-admin />
     <main class="pt-24 px-4 sm:px-6 lg:px-8 flex justify-center">
         <div class="w-full max-w-md bg-[#EFE4D2] rounded-2xl shadow-xl p-6 sm:p-8 mt-14">
-            <h2 class="text-3xl font-bold text-center text-[#2F2E2B] mb-6">Tambah Data Produk</h2>
+            <h2 class="text-3xl font-bold text-center text-[#2F2E2B] mb-6">Edit Data Produk</h2>
             <form method="POST" action="{{ route('produk.update', $produk->id) }}" class="space-y-6" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
