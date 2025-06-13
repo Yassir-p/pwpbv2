@@ -20,10 +20,6 @@
     @endphp
 
     @if (!$admin || $admin->role !== 'admin')
-    $user = Auth::guard('pengguna')->user();
-    @endphp
-
-    @if (!$user || $user->role !== 'admin')
     <script>
         Swal.fire({
             icon: 'error',
