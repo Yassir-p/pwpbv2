@@ -30,7 +30,6 @@ class AuthController extends Controller
                 ->with('swal_success', 'Selamat datang, ' . Auth::guard('pengguna')->user()->full_name . '!');
         }
 
-        // Jika keduanya gagal
         return back()->withErrors([
             'username' => 'Username atau password salah.',
         ])->withInput()->with('swal_error', 'Username atau password salah.');
