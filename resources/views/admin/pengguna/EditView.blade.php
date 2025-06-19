@@ -10,7 +10,7 @@
     <script src="https://unpkg.com/@heroicons/react@2.0.18/24/outline.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <title>Tambah Data Produk</title>
+    <title>Admin Dashboard</title>
 </head>
 
 <body class="min-h-screen bg-[#B6B09F]">
