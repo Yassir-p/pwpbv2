@@ -9,6 +9,7 @@
     <script src="https://unpkg.com/@heroicons/react@2.0.18/24/outline.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Wahyep</title>
     <link rel="icon" href="{{ asset('wahyep.png') }}" type="image/png">
     @vite('resources/js/app.js')
 </head>
