@@ -31,11 +31,11 @@
         });
     </script>
     @endif
-    
+
     <header class="fixed mx-auto w-full flex flex-col overflow-hidden px-8 py-4 lg:flex-row lg:items-center z-50 backdrop-blur-md">
-        <a href="/" class="flex items-center whitespace-nowrap text-2xl font-black">
+        <a href="{{ url('/') }}" class="flex items-center whitespace-nowrap text-2xl font-black">
             <span class="mr-2 w-28">
-                <img src="/storage/assets/wahyep.png" />
+                <img src="{{ url('wahyep.png') }}" />
             </span>
         </a>
         <input type="checkbox" class="peer hidden" id="navbar-open" />
