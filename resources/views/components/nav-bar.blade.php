@@ -29,10 +29,10 @@
         </label>
         <nav aria-label="Header Navigation" class="peer-checked:pt-8 peer-checked:max-h-60 flex max-h-0 w-full flex-col items-center overflow-hidden transition-all lg:ml-40 lg:max-h-full lg:flex-row">
             <ul class="flex w-full flex-col items-center space-y-2 lg:flex-row lg:justify-center lg:space-y-0">
-                <li class="lg:mr-12"><a class="text-black transition hover:text-amber-950 duration-200" href="/">Beranda</a></li>
-                <li class="lg:mr-12"><a class="text-black transition hover:text-amber-950 duration-200" href="/tentang">Layanan</a></li>
-                <li class="lg:mr-12"><a class="text-black transition hover:text-amber-950 duration-200" href="/hubungi">Hubungi</a></li>
-                <li class="lg:mr-12"><a class="text-black transition hover:text-amber-950 duration-200" href="/produk">Produk</a></li>
+                <li class="lg:mr-12"><a class="text-black transition hover:text-amber-950 duration-200" href="{{ url('/') }}">Beranda</a></li>
+                <li class="lg:mr-12"><a class="text-black transition hover:text-amber-950 duration-200" href="{{ url('tentang') }}">Layanan</a></li>
+                <li class="lg:mr-12"><a class="text-black transition hover:text-amber-950 duration-200" href="{{ url('hubungi') }}">Hubungi</a></li>
+                <li class="lg:mr-12"><a class="text-black transition hover:text-amber-950 duration-200" href="{{ url('produk') }}">Produk</a></li>
             </ul>
             <hr class="mt-4 w-full lg:hidden" />
             <div class="my-0 flex items-center space-x-6 space-y-2 lg:my-0 lg:ml-auto lg:space-x-3 lg:space-y-0">
